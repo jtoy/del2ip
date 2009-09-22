@@ -1,23 +1,46 @@
-%h1 Delicious to Instapaper
-%h2 copy your delicious bookmarked pages to Instapaper
-%p You must put in your password for delicious, nothing is stored on the server, you can view the source code for this project <a href="http://github.com/jtoy/del2ip">here</a>
-
-%form(method="post")
-  %div
-    Delicious user name
-    %input(type="text" name="d_u")
-    Delicious password
-    %input(type="password" name="d_p")
-    tags (all bookmarks if blank, otherwise only bookmarks for specified tags)
-    %input(type="text" name="d_t")
-  %div
-    Instapaper user name
-    %input(type="text" name="i_u")
-    Instapaper password (optional)
-    %input(type="password" name="i_p")
-  %input(type="submit")
-
-
-
-
-%a(href="http://twitter.com/jtoy") Follow me on twitter
+!!!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+!!!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"��"http://www.w3.org/TR/html4/loose.dtd"
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  
+  %head
+    %img(src="/delicious-256x256.png" width="200" height="200")
+    %img(src="/ip-200x200.png" width="200" height="200")
+    
+    %title
+      del2ip - Delicious to Instapaper service by jtoy
+    %link(href="/css.css" media="all" rel="stylesheet" type="text/css")
+    
+  %body
+    %h1 Delicious to Instapaper
+    %h2 copy your delicious bookmarked pages to Instapaper
+    %p You must put in your password for delicious, nothing is stored on the server, you can view the source code for this project <a href="http://github.com/jtoy/del2ip">here</a>
+    
+    %form(method="post")
+      %div
+        Delicious user name
+        %input(type="text" name="d_u")
+        Delicious password
+        %input(type="password" name="d_p")
+        %div
+          tags (all bookmarks if blank, otherwise only bookmarks for specified tags)
+          %input(type="text" name="d_t")
+      %h1
+        to
+      %div
+        Instapaper user name
+        %input(type="text" name="i_u")
+        Instapaper password (optional)
+        %input(type="password" name="i_p")
+      %input(type="submit" value="move")
+    
+    
+    
+  %div &nbsp
+  %div &nbsp
+  %div &nbsp
+  %div &nbsp
+  %div &nbsp
+  %div &nbsp
+  %div &nbsp
+  %img(src="/twitter.gif")
+    
