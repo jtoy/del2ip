@@ -14,11 +14,12 @@ get '/' do
 end
 
 post '/' do
-  #Thread.new{
+  @post = true
+  Thread.new{
     d = WWW::Delicious.new(params[:d_u], params[:d_p])
     i = Instapaper::Base.new(params[:i_u],params[:i_p])
     r = i.authenticate
-    if params[:d_t].blank?
+    if params[:d_t].to_s.strip.empty?
       posts = d.posts_all
     else
       posts = params[:d_t].split(" ").collect{|tag| d.posts_all(:tag => tag) }.flatten.uniq
@@ -26,7 +27,8 @@ post '/' do
     if r.code == 200
       posts.each{|p| i.add p.url.to_s }
     end
-  #}
+  }
+  haml :index
 end
 
 

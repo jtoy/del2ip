@@ -12,7 +12,11 @@
     
   %body
     %h1 Delicious to Instapaper
-    %h2 copy your delicious bookmarked pages to Instapaper
+    %h2 copy your Delicious bookmarked pages to Instapaper
+    - if @post
+      #message
+        Your bookmarked URLs are being copied, check them out at <a href="http://instapaper.com">instapaper</a>
+        
     %p by <a href="http://jtoy.net">jtoy</a>
     %p You must put in your password for delicious, nothing is stored on the server, you can view the source code for this project <a href="http://github.com/jtoy/del2ip">here</a>
     
@@ -36,7 +40,8 @@
         %input(type="password" name="i_p")
       %div &nbsp
       %div &nbsp
-      %input(type="submit" value="move")
+      - unless @post
+        %input(type="submit" value="copy")
     
     
     
