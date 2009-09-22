@@ -13,6 +13,7 @@
   %body
     %h1 Delicious to Instapaper
     %h2 copy your delicious bookmarked pages to Instapaper
+    %p by <a href="http://jtoy.net">jtoy</a>
     %p You must put in your password for delicious, nothing is stored on the server, you can view the source code for this project <a href="http://github.com/jtoy/del2ip">here</a>
     
     %form(method="post")
@@ -22,8 +23,10 @@
         Delicious password
         %input(type="password" name="d_p")
         %div
-          tags (all bookmarks if blank, otherwise only bookmarks for specified tags)
+          tags 
           %input(type="text" name="d_t")
+        %div
+          (all bookmarks if blank, otherwise only bookmarks for specified tags, tags are space seperated)
       %h1
         to
       %div
@@ -31,6 +34,8 @@
         %input(type="text" name="i_u")
         Instapaper password (optional)
         %input(type="password" name="i_p")
+      %div &nbsp
+      %div &nbsp
       %input(type="submit" value="move")
     
     
